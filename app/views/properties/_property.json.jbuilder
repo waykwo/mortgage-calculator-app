@@ -1,0 +1,8 @@
+json.purchase_price property.purchase_price
+json.interest_rate property.interest_rate
+json.amortization property.amortization
+json.down_payment property.down_payment
+json.loan_amount property.loan_amount
+json.monthly_payment property.monthly_payment
+json.property_tax property.property_tax
+json.monthly_income property.monthly_income
