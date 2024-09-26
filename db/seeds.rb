@@ -10,6 +10,8 @@
 
 require "faker"
 
+# Property.destroy_all
+
 def calculate_m(p, r, n)
   numerator = r * (1 + r)**n
   denominator = (1 + r)**n - 1
@@ -17,13 +19,14 @@ def calculate_m(p, r, n)
   return m
 end
 
-purchase_price = rand(200000..99999999)
-down_payment = purchase_price * rand(5..20) * 0.01
-interest_rate = rand(1..7) + rand.round(2)
-amortization = rand(1..5) * 5
-property_tax = (rand(0.0028..0.026) * purchase_price).round(2)
 
 20.times do
+  purchase_price = rand(200000..99999999)
+  down_payment = purchase_price * rand(5..20) * 0.01
+  interest_rate = rand(1..7) + rand.round(2)
+  amortization = rand(1..5) * 5
+  property_tax = (rand(0.0028..0.026) * purchase_price).round(2)
+
   property = Property.new(
     address: Faker::Address.full_address,
     purchase_price: purchase_price,
@@ -34,5 +37,7 @@ property_tax = (rand(0.0028..0.026) * purchase_price).round(2)
     monthly_payment: calculate_m(purchase_price, interest_rate, (amortization * 12)),
     property_tax: property_tax
   )
+
   property.save
+
 end

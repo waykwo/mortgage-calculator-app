@@ -1,3 +1,5 @@
+json.address property.address
+json.notes property.notes
 json.purchase_price property.purchase_price
 json.interest_rate property.interest_rate
 json.amortization property.amortization
