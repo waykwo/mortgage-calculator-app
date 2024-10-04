@@ -1,3 +1,4 @@
+json.id property.id
 json.address property.address
 json.notes property.notes
 json.purchase_price property.purchase_price
